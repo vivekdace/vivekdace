@@ -218,8 +218,8 @@ GREEN='\033[0;32m'
 CYAN='\033[0;36m'
 NC='\033[0m'
 
-SQUID_USER=$(cat /dev/urandom | tr -dc 'z-z' | fold -w 4 | head -n 1)
-SQUID_PW=$(cat /dev/urandom | tr -dc 'z-z' | fold -w 4 | head -n 1)
+SQUID_USER=$(cat /dev/urandom | tr -dc 'a-z' | fold -w 8 | head -n 1)
+SQUID_PW=$(cat /dev/urandom | tr -dc 'a-z' | fold -w 8 | head -n 1)
 
 htpasswd -b -c /etc/squid/passwd $SQUID_USER $SQUID_PW > /dev/null 2>&1
 
